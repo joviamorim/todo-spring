@@ -21,7 +21,7 @@ public class Task {
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false, updatable = false)
-    private User userId;
+    private User user;
 
     @Column(name = "description", nullable = false, length = 255)
     @Size(max = 255)

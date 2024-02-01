@@ -17,6 +17,14 @@ import java.util.List;
 @NoArgsConstructor
 @Data
 public class User {
+    public interface CreateUser {
+
+    }
+
+    public interface UpdateUser {
+
+    }
+
     @Id
     @Column(name = "id", unique = true)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,6 +42,6 @@ public class User {
     private String password;
 
     @Column(name = "tasks")
-    @OneToMany(mappedBy = "userId")
+    @OneToMany(mappedBy = "user")
     private List<Task> tasks = new ArrayList<Task>();
 }
